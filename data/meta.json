@@ -1,0 +1,185 @@
+{
+ "subtitle": "Every Scopus-indexed journal on the Finnish Publication Forum (JUFO) list \u2014 24,194 journals across levels 3, 2, 1 and 0 \u2014 measured with the same 25 SciVal indicators used in the FT50 and ABS studies, and set against the ABS/AJG 2024 ratings and the FT50 list.",
+ "source": "Elsevier SciVal indicators, exported 5\u20138 August 2026, publication years 2010\u20132026. JUFO levels as tagged from the julkaisufoorumi.fi journal list, August 2026.",
+ "n_journals": 24194,
+ "levels": [
+  "3",
+  "2",
+  "1",
+  "0"
+ ],
+ "level_n": {
+  "3": 1363,
+  "2": 2602,
+  "1": 17455,
+  "0": 2774
+ },
+ "headline": {
+  "fwci_l3": 1.78,
+  "fwci_l2": 1.13,
+  "fwci_l1": 0.57,
+  "fwci_l0": 0.33,
+  "ov21": 0.1250293083235639,
+  "ov32": 0.14716106604866744,
+  "rho_fwci": 0.438,
+  "abs_high_at_top": 119,
+  "abs_high_total": 139,
+  "ft50_at3": 49,
+  "ft50_matched": 53,
+  "ft50_total": 53
+ },
+ "metrics": {
+  "Scholarly Output": {
+   "channel": "Output",
+   "short": "Output",
+   "unit": "count"
+  },
+  "Publications in All Journal Quartiles by CiteScore": {
+   "channel": "Output",
+   "short": "Pubs in CiteScore quartiles",
+   "unit": "count"
+  },
+  "Subject Area Main Category Count": {
+   "channel": "Output",
+   "short": "Subject areas",
+   "unit": "count"
+  },
+  "Citation Count excl self citations": {
+   "channel": "Citation",
+   "short": "Citations",
+   "unit": "count"
+  },
+  "Citations per Publication excl self citations": {
+   "channel": "Citation",
+   "short": "Cites/pub",
+   "unit": "ratio"
+  },
+  "Cited Publications excl self citations": {
+   "channel": "Citation",
+   "short": "Cited pubs",
+   "unit": "count"
+  },
+  "Field Weighted Citation Impact excl self citations": {
+   "channel": "Citation",
+   "short": "FWCI",
+   "unit": "ratio"
+  },
+  "Output in Top 10 Citation Percentiles excl self citations": {
+   "channel": "Citation",
+   "short": "Top-10% cited (%)",
+   "unit": "percent"
+  },
+  "h index excl self citations": {
+   "channel": "Citation",
+   "short": "h-index",
+   "unit": "index"
+  },
+  "Publications in Top 10 Journal Percentiles by CiteScore Percentile": {
+   "channel": "Journal standing",
+   "short": "In top-10% journals (%)",
+   "unit": "percent"
+  },
+  "Prominence percentile": {
+   "channel": "Journal standing",
+   "short": "Prominence pctile",
+   "unit": "percentile"
+  },
+  "Views Count": {
+   "channel": "Views",
+   "short": "Views",
+   "unit": "count"
+  },
+  "Views per Publication": {
+   "channel": "Views",
+   "short": "Views/pub",
+   "unit": "ratio"
+  },
+  "Field Weighted Views Impact": {
+   "channel": "Views",
+   "short": "FW views impact",
+   "unit": "ratio"
+  },
+  "Output in Top 10 Views Percentiles": {
+   "channel": "Views",
+   "short": "Top-10% viewed (%)",
+   "unit": "percent"
+  },
+  "Citing Policy Documents": {
+   "channel": "Policy",
+   "short": "Citing policy docs",
+   "unit": "count"
+  },
+  "Field Normalized Policy Impact": {
+   "channel": "Policy",
+   "short": "FN policy impact",
+   "unit": "ratio"
+  },
+  "Scholarly Output cited by Policies": {
+   "channel": "Policy",
+   "short": "Output cited by policy",
+   "unit": "count"
+  },
+  "Patent Citations": {
+   "channel": "Patent",
+   "short": "Patent citations",
+   "unit": "count"
+  },
+  "Patent Citations per Scholarly Output": {
+   "channel": "Patent",
+   "short": "Patent cites per 1,000 pubs",
+   "unit": "ratio"
+  },
+  "Scholarly Output cited by Patents": {
+   "channel": "Patent",
+   "short": "Output cited by patents",
+   "unit": "count"
+  },
+  "International Collaboration": {
+   "channel": "Collaboration",
+   "short": "Intl collab (%)",
+   "unit": "percent"
+  },
+  "International Collaboration Impact": {
+   "channel": "Collaboration",
+   "short": "Intl collab impact",
+   "unit": "ratio"
+  },
+  "Academic Corporate Collaboration": {
+   "channel": "Collaboration",
+   "short": "Acad-corporate collab (%)",
+   "unit": "percent"
+  },
+  "Academic Corporate Collaboration Impact": {
+   "channel": "Collaboration",
+   "short": "Acad-corporate collab impact",
+   "unit": "ratio"
+  }
+ },
+ "key_trajectory_metrics": [
+  "Field Weighted Citation Impact excl self citations",
+  "Scholarly Output",
+  "Citations per Publication excl self citations",
+  "Output in Top 10 Citation Percentiles excl self citations",
+  "Citing Policy Documents",
+  "Patent Citations",
+  "Patent Citations per Scholarly Output",
+  "Views per Publication",
+  "International Collaboration"
+ ],
+ "ship": [
+  "Scholarly Output",
+  "Field Weighted Citation Impact excl self citations",
+  "Citations per Publication excl self citations",
+  "Output in Top 10 Citation Percentiles excl self citations",
+  "Publications in Top 10 Journal Percentiles by CiteScore Percentile",
+  "Prominence percentile",
+  "International Collaboration",
+  "Views per Publication",
+  "Field Weighted Views Impact",
+  "Citing Policy Documents",
+  "Patent Citations",
+  "Patent Citations per Scholarly Output",
+  "h index excl self citations"
+ ],
+ "public": true
+}

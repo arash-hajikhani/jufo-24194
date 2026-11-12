@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The JUFO 24,194</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jufo.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="container">
+    <p class="eyebrow">Companion analysis to <em>The Three FT50s</em> &amp; <em>The ABS 1,583</em></p>
+    <h1>The JUFO 24,194</h1>
+    <p class="lede" id="subtitle"></p>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section">
+    <div id="kpis" class="kpi-grid"></div>
+  </section>
+
+  <section class="section" id="why">
+    <h2>Why this page exists</h2>
+    <p class="measure">The Finnish Publication Forum (JUFO) classifies publication channels into
+      levels <strong>3</strong> (highest), <strong>2</strong>, <strong>1</strong> (basic) and
+      <strong>0</strong>. The levels steer how Finnish universities are funded and, in practice,
+      where Finnish researchers try to publish. The panels revise the classification through
+      public comment rounds — such as the
+      <a href="https://julkaisufoorumi.fi/en/news/comment-changes-jufo-level-2" target="_blank" rel="noopener">
+      current call for comments on changes to level 2</a>.</p>
+    <div class="edu-box measure">
+      <p><strong>If you are commenting on a journal, look at the big picture first.</strong>
+        This page puts every Scopus-indexed journal on the JUFO list on the same measurement
+        scale — the 25 SciVal indicators used in the FT50 and ABS companion studies — so a
+        comment can be grounded in evidence rather than familiarity:</p>
+      <ul>
+        <li>Where does the journal actually sit <em>inside</em> its current level? (§2, §3, and the
+          explorer in §11 — every journal has a percentile profile.)</li>
+        <li>Is the case you are making visible in any indicator — citations, usage, policy or
+          patent reach — or is it purely reputational? (§1, §7, §8)</li>
+        <li>How do international ratings treat the same journal? JUFO, ABS/AJG and the FT50
+          agree far less than most researchers assume. (§5)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What we found</h2>
+    <div id="findings-grid" class="findings-grid"></div>
+  </section>
+
+  <section class="section" id="gradient">
+    <h2>1 &middot; Impact tracks the JUFO level — unevenly</h2>
+    <p class="measure">Each bar is the median journal of a level, scaled so level 3 reads 1.0.
+      If the levels measured one thing called “quality”, all four channels would fall in step.
+      They do not: citation impact and policy reach drop steeply level by level, usage
+      (views) barely moves, and patent reach is essentially flat — the same asymmetry the
+      ABS study found across the AJG ratings.</p>
+    <div class="fig"><div class="fig-plot"><canvas id="chart-gradient"></canvas></div></div>
+    <p class="note measure" id="gradient-note"></p>
+  </section>
+
+  <section class="section" id="overlap">
+    <h2>2 &middot; The levels overlap — a lot</h2>
+    <p class="measure">Each strip shows where a level’s journals sit in the <em>whole</em>
+      JUFO population, ranked by field-weighted citation impact (FWCI). The thick bar is the
+      middle half of the level (25th–75th percentile), the whisker the 5th–95th, the notch the
+      median. The levels are real strata — but wide, heavily overlapping ones: a level is a
+      panel judgement about a distribution, not a property of every journal in it.</p>
+    <div class="fig"><div class="fig-plot"><canvas id="chart-overlap"></canvas></div></div>
+    <p class="note measure" id="overlap-note"></p>
+    <p class="measure" style="margin-top:1.6rem">A sharper separator is <em>journal standing</em>:
+      the share of a journal’s output published while the journal ranked in the top decile of its
+      field by CiteScore. By this measure the levels separate cleanly at the top — and levels 1
+      and 0 are indistinguishable.</p>
+    <div class="fig"><div class="fig-plot"><canvas id="chart-standing"></canvas></div></div>
+    <p class="note measure" id="standing-note"></p>
+  </section>
+
+  <section class="section" id="edges">
+    <h2>3 &middot; The edge cases — journals that don’t fit their level</h2>
+    <p class="measure">These are the journals worth a comment. The rule is deliberately simple:
+      rank the 23,749 journals with the required indicators by the
+      <strong>broad-impact index</strong> — the mean of a journal&rsquo;s percentile on citation
+      impact (FWCI), field-normalised policy impact, and patent citations per 1,000 papers, the
+      same three channels the FT50 study used. A journal is a <strong>promotion case</strong>
+      when its index sits above the <em>median</em> of the level above. A
+      <strong>demotion case</strong> must clear two bars: index <em>and</em> field-weighted
+      citation percentile both below the medians of the level below — the second condition stops
+      fields with no patent or policy uptake (mathematics, large parts of the humanities) from
+      being flagged mechanically. Journals with at least 100 lifetime papers; the lists show the
+      twenty strongest cases per boundary, the counts the full scale.</p>
+    <div class="mismatch-grid">
+      <div class="mismatch-col"><h3>Cases to argue <em>up</em></h3><div id="edges-up"></div></div>
+      <div class="mismatch-col"><h3>Cases to argue <em>down</em></h3><div id="edges-down"></div></div>
+    </div>
+    <p class="note measure" style="margin-top:1.2rem">An index is one lens, not a verdict —
+      a journal can earn its level through usage, policy reach, or scholarly functions no indicator
+      sees, and the demotion lists skew toward non-English humanities titles partly because Scopus
+      indexes their citing literature thinly. Click any journal for its full percentile profile
+      before forming a view. The
+      level&nbsp;2&nbsp;→&nbsp;3 list is opened by default because level 2 is what the
+      <a href="https://julkaisufoorumi.fi/en/news/comment-changes-jufo-level-2" target="_blank" rel="noopener">current
+      JUFO comment round</a> is about.</p>
+  </section>
+
+  <section class="section" id="qmap">
+    <h2>4 &middot; The JUFO quality map</h2>
+    <p class="measure">Every one of the 24,194 journals placed by two axes: scholarly standing
+      (FWCI percentile) against societal reach (the better of its policy and patent percentile).
+      Colour is the JUFO level. The level gradient runs along the citation axis; the off-diagonal
+      journals — high societal reach, ordinary citation standing — are the ones a citation-flavoured
+      classification systematically underrates.</p>
+    <div class="fig"><div class="fig-plot fig-plot--tall"><canvas id="chart-qmap"></canvas></div></div>
+    <p class="note measure">Hover any point for the journal. Click legend entries to isolate a level.</p>
+  </section>
+
+  <section class="section" id="crosswalk">
+    <h2>5 &middot; JUFO against ABS/AJG and the FT50</h2>
+    <p class="measure">1,520 of the 1,583 Scopus-indexed ABS/AJG 2024 journals also hold a JUFO
+      level. The two systems — Finnish all-science panels and a UK business-school committee —
+      agree at the very top and diverge everywhere else. Each cell counts journals; colour is the
+      share of the AJG row.</p>
+    <div class="fig"><div id="xwalk-matrix" class="xwalk"></div></div>
+    <p class="note measure" id="xwalk-note"></p>
+    <div class="mismatch-grid">
+      <div class="mismatch-col">
+        <h3>Rated 4/4* by ABS, level 1 by JUFO</h3>
+        <ol id="mm-high"></ol>
+      </div>
+      <div class="mismatch-col">
+        <h3>Level 3 by JUFO, rated 1–2 by ABS</h3>
+        <ol id="mm-low"></ol>
+      </div>
+    </div>
+    <p class="measure" id="ft50-line" style="margin-top:1.6rem"></p>
+    <div class="fig"><div class="fig-plot fig-plot--short"><canvas id="chart-ft50"></canvas></div></div>
+    <p class="note measure" id="ft50-note"></p>
+  </section>
+
+  <section class="section" id="finland">
+    <h2>6 &middot; The Finnish footprint</h2>
+    <p class="measure">Where do Finnish researchers actually publish inside this system? Every
+      Finland-affiliated paper in the 23,588 OpenAlex-matched JUFO journals, 2010–2026 —
+      <strong id="fi-total"></strong> papers in all, attributed through the 840 Finnish
+      institutions registered in OpenAlex. Finland is <em>over-represented at the top</em>: its
+      share of world output is highest in level-3 journals and falls with every level.</p>
+    <div class="fig"><div class="fig-plot"><canvas id="chart-fi-share"></canvas></div></div>
+    <p class="note measure" id="fi-share-note"></p>
+    <p class="measure" style="margin-top:1.6rem">And who publishes it: each bar splits an
+      institution&rsquo;s JUFO-journal output by level. University hospitals and research
+      institutes ride the medical level-2/3 journals; the multidisciplinary universities carry
+      the biggest level-1 volumes.</p>
+    <div class="fig"><div class="fig-plot fig-plot--tall"><canvas id="chart-fi-inst"></canvas></div></div>
+    <p class="note measure">Whole counting: a paper with authors at two Finnish institutions counts
+      once for each — summed institution bars reach ~1.7× the 311,966 distinct papers, so do not add
+      bars together. Papers and citations are OpenAlex measures (citations run higher than
+      Scopus/SciVal); the share denominators are SciVal Scholarly Output, so treat shares as
+      close approximations. The explorer below has a per-journal <em>FI papers</em> column.</p>
+  </section>
+
+  <section class="section" id="fit">
+    <h2>7 &middot; Better fits, worse fits — the spectrum inside each level</h2>
+    <p class="measure">Every level has a top end and a bottom end. To see them on one scale, each
+      journal gets a <strong>broad-impact index</strong>: the mean of its percentile on citation
+      impact (FWCI), field-normalised policy impact, and patent citations per paper — the FT50
+      study&rsquo;s three channels. Within its level, every journal is then a quartile:
+      <strong>Q1</strong> (top 25%) to <strong>Q4</strong> (bottom 25%). The question for Finnish
+      science: does Finnish volume flow to the top of each level, or to the easy end?</p>
+    <div class="fig"><div class="fig-plot"><canvas id="chart-fit-decile"></canvas></div></div>
+    <p class="note measure" id="fit-decile-note"></p>
+    <p class="measure" style="margin-top:1.6rem">The same question journal by journal: how heavily
+      Finland uses a venue against how its Finnish papers perform. The impact measure is
+      year-normalised within the Finnish corpus — 1.0 means the papers are cited like the average
+      Finland-affiliated JUFO paper of the same age; the index on the x-axis says how strong the
+      journal itself is. Neither measure is field-normalised against its own discipline: a
+      mathematics or humanities journal sits low on both axes by field alone, so read positions
+      <em>within</em> a field, not across fields. With that lens, top-right is where volume pays
+      off, and a big dot low on both axes is worth a second look.</p>
+    <div class="fig"><div class="fig-plot fig-plot--tall"><canvas id="chart-fit-scatter"></canvas></div></div>
+    <p class="note measure">Journals with ≥20 Finnish papers; a few titles whose OpenAlex count
+      exceeds their SciVal output (a coverage mismatch) are excluded. Dot size is Finnish volume.
+      Hover for the journal; click legend entries to isolate a level.</p>
+    <div class="mismatch-grid" style="margin-top:1.8rem">
+      <div class="mismatch-col">
+        <h3>The weak end of level 3, ranked by Finnish volume</h3>
+        <p class="note">Bottom-quartile level-3 journals by the index, ordered by Finnish papers —
+          the venues where full level-3 credit meets the weakest measured profile. These are
+          <em>prompts for scrutiny, not verdicts</em>: the two largest, Astronomy&nbsp;&amp;&nbsp;Astrophysics
+          and J.&nbsp;High&nbsp;Energy&nbsp;Physics, are their fields&rsquo; standard flagships, sit low on
+          the index only because astronomy and particle physics have no patent/policy channel, and
+          their Finnish papers outperform the Finnish average (FI&nbsp;impact&nbsp;&gt;1). The rows to
+          examine are the ones weak on the index <em>and</em> weak on FI impact.</p>
+        <div id="fit-easy3"></div>
+      </div>
+      <div class="mismatch-col">
+        <h3>Underused gems — top of the class, thin Finnish presence</h3>
+        <p class="note">Top-quartile level-3/2 journals (≥200 papers) where the Finnish share of
+          output is below the level median — venues with headroom, if the work fits.</p>
+        <div id="fit-gems"></div>
+      </div>
+    </div>
+    <p class="note measure" style="margin-top:1.2rem">Caveats that matter here: the index is
+      field-blind on channel propensity — compare within related fields, and check the §11
+      explorer profile before drawing a conclusion about any single journal. Finnish paper counts
+      are OpenAlex measures against SciVal denominators; a handful of small journals where the two
+      systems&rsquo; coverage differs are shown without a share figure.</p>
+  </section>
+
+  <section class="section" id="decoupling">
+    <h2>8 &middot; How the indicators relate to each other</h2>
+    <p class="measure">Spearman rank correlations between the headline indicators across all
+      24,194 journals. The citation family hangs together; views form their own block; policy
+      and patent reach are only loosely attached — three channels, not one.</p>
+    <div class="fig"><div class="fig-plot fig-plot--tall"><canvas id="chart-heatmap"></canvas></div></div>
+    <div class="controls">
+      <label>Scatter: x <select id="sc-x"></select></label>
+      <label>y <select id="sc-y"></select></label>
+      <label>colour <select id="sc-color">
+        <option value="jufo">JUFO level</option><option value="ajg">ABS/AJG rating</option></select></label>
+    </div>
+    <div class="fig"><div class="fig-plot"><canvas id="chart-scatter"></canvas></div></div>
+    <p class="note measure">Log scales are used for count metrics. Each dot is one journal;
+      the ABS/AJG view shows only journals on both lists.</p>
+  </section>
+
+  <section class="section" id="trajectories">
+    <h2>9 &middot; Trajectories, 2010–2024</h2>
+    <p class="measure">Switch between the whole-population distribution and a breakdown by JUFO
+      level. The level view shows whether a trend is shared across the system or driven by one
+      stratum.</p>
+    <div class="controls">
+      <label>Metric <select id="traj-metric"></select></label>
+      <label>View
+        <select id="traj-mode">
+          <option value="dist">All JUFO — median &amp; interquartile range</option>
+          <option value="level">By JUFO level — medians</option>
+        </select>
+      </label>
+    </div>
+    <div class="fig"><div class="fig-plot fig-plot--traj"><canvas id="chart-trajectory"></canvas></div></div>
+    <p class="note measure">Recent years are trimmed per metric because citations, policy
+      references and patent citations accumulate with a lag: 2024–26 are dropped for citation
+      and policy metrics and 2023–26 for patent metrics.</p>
+  </section>
+
+  <section class="section" id="inequality">
+    <h2>10 &middot; How concentrated is each channel</h2>
+    <p class="measure">Gini coefficients across all 24,194 journals, by year. A value near 0
+      means the channel is spread evenly; near 1 means a handful of journals take almost
+      everything. Policy and patent attention are dramatically more concentrated than citations
+      or output — most of the system’s societal reach flows through very few journals.</p>
+    <div class="fig"><div class="fig-plot"><canvas id="chart-inequality"></canvas></div></div>
+  </section>
+
+  <section class="section" id="explorer">
+    <h2>11 &middot; Journal explorer</h2>
+    <p class="measure">All 24,194 journals with their lifetime values. Sort by any column;
+      filter by level, ABS rating, or name. Click a row for the journal’s percentile profile —
+      where it sits in the whole JUFO population on every indicator.</p>
+    <div class="controls">
+      <input id="f-search" type="search" placeholder="Search journal name…">
+      <select id="f-level"></select>
+      <select id="f-ajg"></select>
+      <label class="chk"><input type="checkbox" id="f-ft50"> FT50 only</label>
+      <span class="count" id="tbl-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table class="jtable">
+        <thead><tr id="tbl-head"></tr></thead>
+        <tbody id="tbl-body"></tbody>
+      </table>
+    </div>
+    <p class="note" id="tbl-more"></p>
+
+    <div id="journal-detail" class="detail-panel" hidden>
+      <button class="close-btn" id="detail-close" aria-label="Close">&times;</button>
+      <h3 id="detail-title"></h3>
+      <p class="detail-meta"><span id="detail-meta-line"></span></p>
+      <div class="fig-plot fig-plot--profile"><canvas id="chart-profile"></canvas></div>
+      <p class="note">Bars: this journal’s percentile among all 24,194 JUFO journals.
+        Ticks: the median journal of its level.</p>
+    </div>
+  </section>
+
+  <section class="section" id="glossary">
+    <h2>12 &middot; What each indicator means</h2>
+    <p class="measure">The 25 SciVal indicators, grouped by channel. Citation indicators are the
+      self-citation-excluded variants; treat small numeric differences from the FT50/ABS pages
+      (which use the including-self-citations variants) accordingly.</p>
+    <div id="glossary-body"></div>
+  </section>
+
+  
+
+  <section class="section" id="method">
+    <h2>Method &amp; caveats</h2>
+    <div class="measure">
+      <p>The JUFO classification covers journals, series, conferences and book publishers.
+        This analysis covers the journals that have a Scopus record and therefore SciVal
+        metrics — 24,194 titles tagged by level from the julkaisufoorumi.fi list. Conferences,
+        book publishers and non-indexed channels are outside it. Publication years 2010–2026.</p>
+      <p><strong>Read the levels as strata, not as ground truth.</strong> A JUFO level is a
+        panel judgement; this page uses it to slice the population. §2 is the reason to be
+        careful: the distributions inside neighbouring levels overlap heavily, so the level
+        alone says little about an individual journal.</p>
+      <p><strong>Field normalisation matters — and is incomplete here.</strong> Raw counts
+        (citations, views, policy documents) are not comparable across fields. FWCI and the
+        field-normalised policy indicator carry most comparisons, but the broad-impact
+        index&rsquo;s patent channel is a raw cross-field rate, and the §7 Finnish impact measure
+        is normalised by year only — both sink low-patent, low-citation fields by construction.
+        JUFO panels are field-specific for exactly this reason; so should any reading of §3 and
+        §7 be. Data through mid-2026; the 2026 publication year is partial.</p>
+      <p><strong>Comparability with the FT50/ABS pages.</strong> The JUFO export uses the
+        self-citation-excluded citation variants and a 2010–2026 window; the FT50/ABS pages use
+        including-self-citation variants over 1996–2026. Cross-page comparisons should stay
+        qualitative. The ABS crosswalk matches 1,520 of 1,583 Scopus-indexed AJG journals by
+        name; the FT50 crosswalk matches all 53.</p>
+      <p><strong>About this public version.</strong> Per-journal indicator values are shown as percentile ranks within the 24,194 journals rather than as absolute values; the underlying bibliometric data is licensed and is not redistributed here. Derived indices, aggregate statistics and the Finland-affiliated counts (from open OpenAlex data) are shown in full.</p>
+      <p class="note" id="source-note"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="container">
+    <p>Built from Elsevier SciVal indicators. Companion to <em>The Three FT50s</em> (submitted,
+      <em>Quantitative Science Studies</em>) and <em>The ABS 1,583</em>. JUFO levels:
+      <a href="https://julkaisufoorumi.fi/en" target="_blank" rel="noopener">julkaisufoorumi.fi</a>.</p>
+  </div>
+</footer>
+
+<script src="js/jufo.js"></script>
+</body>
+</html>
